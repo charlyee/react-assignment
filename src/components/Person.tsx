@@ -27,8 +27,10 @@ export default class Person extends React.Component<IPersonProps, IPersonState> 
                 <form>
                     <h2>Log-in Form</h2>
                     <label htmlFor="user-name">User Name</label>
+                    <input type="text" name="user-name" value={this.state.userName} />
                     <h3> </h3>
                     <label htmlFor="user-password">Password</label>
+                    <input type="text" name="user-password" value={this.state.userPassword} />
                 </form>
             </div>
         )
