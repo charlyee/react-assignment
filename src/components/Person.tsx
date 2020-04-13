@@ -5,19 +5,32 @@ interface IPersonProps {
 
 interface IPersonState {
     userName: string,
-    password: string,
+    userPassword: string,
     // age: number,
     // liked: boolean
 }
 
 export default class Person extends React.Component<IPersonProps, IPersonState> {
-    constructor ( props: string | number ) {
+    constructor ( props: string ) {
         super( props );
         this.state = {
             userName: "John",
-            password: "Smith",
+            userPassword: "Smith",
             // age: 45
             // liked: false
         }
+    }
+    render () {
+        return (
+            <div>
+                {/* <h2>{this.state.userName} {this.state.userPassword}</h2> */}
+                <form>
+                    <h2>Log-in Form</h2>
+                    <label htmlFor="user-name">User Name</label>
+                    <h3> </h3>
+                    <label htmlFor="user-password">Password</label>
+                </form>
+            </div>
+        )
     }
 }
