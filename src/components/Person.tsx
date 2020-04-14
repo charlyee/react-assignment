@@ -15,9 +15,10 @@ export default class Person extends React.Component<IPersonProps, IPersonState> 
         this.state = {
             userName: "",
             userPassword: "",
-            liked: false
+            liked: true
         }
     }
+    
     updatePerson = ( event: any ) => {
         event.preventDefault();
 
@@ -31,11 +32,13 @@ export default class Person extends React.Component<IPersonProps, IPersonState> 
             userNameString = '';
         else
             userNameString = userName.value;
-
+            console.log(userName);
+        
         if ( userPassword === null )
             userPasswordString = '';
         else
             userPasswordString = userPassword.value;
+            console.log(userPassword);
 
         this.setState( {
             userName: userNameString,
@@ -56,11 +59,11 @@ export default class Person extends React.Component<IPersonProps, IPersonState> 
                 <h2>{this.state.userName} {this.state.userPassword}</h2>
                 {/* <p>Welcome...</p> */}
                 <form onSubmit={this.updatePerson}>
-                    <h3>My Webform</h3>
-                    <label htmlFor="first-name">User Name: </label>
-                    <input type="text" name="user-name" placeholder={this.state.userName} />
-                    <label htmlFor="last-name"> Password: </label>
-                    <input type="text" name="user-password" placeholder={this.state.userPassword} />
+                    <h2>My Webform</h2>
+                    <label htmlFor="username">User Name: </label>
+                    <input type="text" name="user-name" defaultValue={this.state.userName} />
+                    <label htmlFor="password"> Password: </label>
+                    <input type="password" name="user-password" defaultValue={this.state.userPassword}  />
                     {/* <input type="submit" value="Apply Updates" /> */}
                 </form>
                 <button onClick={this.toggleLike}>
@@ -75,11 +78,11 @@ export default class Person extends React.Component<IPersonProps, IPersonState> 
                 <h2>{this.state.userName} {this.state.userPassword}</h2>
                 {/* <p>They are {this.state.age} years old.</p> */}
                 <form onSubmit={this.updatePerson}>
-                    <h3>My Webform</h3>
-                    <label htmlFor="first-name">User Name: </label>
-                    <input type="text" name="user-name" placeholder={this.state.userName} />
-                    <label htmlFor="last-name"> Password: </label>
-                    <input type="text" name="user-password" placeholder={this.state.userPassword} />
+                    <h2>My Webform</h2>
+                    <label htmlFor="username">User Name: </label>
+                    <input type="text" name="user-name" defaultValue={this.state.userName}  />
+                    <label htmlFor="username"> Password: </label>
+                    <input type="password" name="user-password" defaultValue={this.state.userPassword}  />
                     {/* <input type="submit" value="Apply Updates" /> */}
                 </form>
                 <button onClick={this.toggleLike}>
